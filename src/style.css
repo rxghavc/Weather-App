@@ -76,12 +76,14 @@ body{
     justify-content: space-between;
     padding: 0 20px;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .column{
     display: flex;
     align-items: center;
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .column img{
@@ -89,7 +91,7 @@ body{
     margin-right: 10px;
 }
 
-.humidity, .wind{
+.humidity, .wind, .sunrise, .sunset{
     margin-top: -6px;
     font-size: 28px;
 }

@@ -5,6 +5,15 @@ const searchbox = document.querySelector(".search-bar");
 const searchButton = document.querySelector(".search-box button");
 const weatherIcon = document.querySelector(".weather-icon");
 
+function formatTime(timestamp) {
+    const date = new Date(timestamp * 1000);
+    const hours = date.getHours();
+    const minutes = "0" + date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const formattedTime = `${hours % 12 || 12}:${minutes.substr(-2)} ${ampm}`;
+    return formattedTime;
+}
+
 async function getWeatherData(city) {
     const response = await fetch(`${apiURL}?q=${city}&appid=${apiKey}&units=metric`);
 
@@ -18,11 +27,15 @@ async function getWeatherData(city) {
         const tempElement = document.querySelector(".temperature");
         const humidityElement = document.querySelector(".humidity");
         const windElement = document.querySelector(".wind");
+        const sunriseElement = document.querySelector(".sunrise");
+        const sunsetElement = document.querySelector(".sunset");
 
         if (cityElement) cityElement.innerText = `${data.name}, ${data.sys.country}`;
         if (tempElement) tempElement.innerText = Math.round(data.main.temp) + " °C";
         if (humidityElement) humidityElement.innerText = data.main.humidity + " %";
         if (windElement) windElement.innerText = data.wind.speed + " km/h";
+        if (sunriseElement) sunriseElement.innerText = formatTime(data.sys.sunrise);
+        if (sunsetElement) sunsetElement.innerText = formatTime(data.sys.sunset);
 
         if (data.weather[0].main === "Clear") {
             weatherIcon.src = "../images/clear.png";
