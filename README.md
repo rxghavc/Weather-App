@@ -6,7 +6,7 @@ A lightweight and responsive weather application that allows users to check real
 
 ## 🚀 Features
 
-- Search for current weather by city
+- Search for current weather by city/town
 - Real-time temperature, weather description, and icons
 - Responsive and user-friendly interface
 - Clean design with animated background elements (optional)
