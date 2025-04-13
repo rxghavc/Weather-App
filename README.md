@@ -2,6 +2,9 @@
 
 A lightweight and responsive weather application that allows users to check real-time weather conditions by entering any city name. Built using HTML, CSS, and JavaScript, and powered by the OpenWeatherMap API.
 
+![image](https://github.com/user-attachments/assets/ffcf4e75-b308-4a8a-95f2-b8aa09d4db42)
+
+
 ## 🚀 Features
 
 - Search for current weather by city
